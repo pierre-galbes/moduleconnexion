@@ -79,8 +79,8 @@
                 <a target="_blank" href="https://www.facebook.com/"><img id="icone"
                         src="https://cdn-icons-png.flaticon.com/128/187/187189.png" /></a>
 
-                <a target="_blank" href="https://www.facebook.com/"><img id="icone"
-                        src="https://cdn-icons-png.flaticon.com/128/187/187189.png" /></a>
+                <a target="_blank" href="https://github.com/pierre-galbes/moduleconnexion"><img id="icone"
+                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png" /></a>
             </div>
             
         </div>
