@@ -15,14 +15,21 @@
         <div class="titre">
             <h1>COMMUNAUTÉ MOTARD </h1>
         </div>
-        <nav>
-            <ul>
-                <li id="Formulaire d'inscription"> <a href="inscription.php">Inscrivez-vous </a> </li>
-                <li id="connexion"> <a href="connexion.php">Connecte toi bg </a> </li>
-                <li id="pro"> <a href="profil.php">Profil </a> </li>
-            </ul>
+
+        <nav> 
+            <?php 
+            if (isset($_SESSION["id"])) {
+            echo "<li><a href='deconnexion.php'>deconnexion</a></li>";
+            echo "<li><a href='profil.php'>Profil</a></li>"; 
+            } else {
+            echo "<li><a href='connexion.php'>Se connecter</a></li>";
+            echo "<li><a href='inscription.php'>Sinscrire</a></li>";
+        };
+            ?>
+
         </nav>
 
+        
 
     </header>
 
@@ -32,7 +39,7 @@
 
         <div class="texte1">
             <p>Notre super club de motard inscrivez-vous pour pouvoir participer aux rassemblements et promenade à
-                mototout au long de l'année </p>
+                moto tout au long de l'année </p>
 
 
             <img src="https://www.icasque.com/liveloveride/wp-content/uploads/2019/09/balade-en-groupe-de-motard.jpg"
@@ -62,13 +69,20 @@
         </div>
 
         <div class="réso">
+
             <h3>Nos réseaux </h3>
+
             <div class="icone">
                 <a target="_blank" href="https://twitter.com/"><img id="icone"
                         src="https://cdn-icons-png.flaticon.com/128/733/733579.png" /></a>
+
+                <a target="_blank" href="https://www.facebook.com/"><img id="icone"
+                        src="https://cdn-icons-png.flaticon.com/128/187/187189.png" /></a>
+
                 <a target="_blank" href="https://www.facebook.com/"><img id="icone"
                         src="https://cdn-icons-png.flaticon.com/128/187/187189.png" /></a>
             </div>
+            
         </div>
 
 

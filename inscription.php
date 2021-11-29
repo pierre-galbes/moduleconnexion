@@ -12,7 +12,7 @@ $conf = $_POST['conf'];
 
 if (!empty($nom) && !empty($prenom) && !empty($password) && !empty($login)) {
     if ($password == $conf) { 
-    echo '...Bienvenue dans le fan club de lOM';
+    echo '...Bienvenue dans le club de motard';
     $req= mysqli_query($connect,"INSERT INTO utilisateurs (login,prenom,nom,password)
     VALUES('$login','$prenom','$nom','$password')");
     } else {echo 'Tas oublier de mettre le même mot de passe';}
@@ -41,8 +41,15 @@ if (!empty($nom) && !empty($prenom) && !empty($password) && !empty($login)) {
         <nav>
             <ul>
                 <li id="index"> <a href="index.php">Accueil </a> </li>
-                <li id="connexion"> <a href="connexion.php">Connexion </a> </li>
-                <li id="pro"> <a href="profil.php">Profil </a> </li>
+                <?php 
+            if (isset($_SESSION["id"])) {
+            echo "<li><a href='deconnexion.php'>deconnexion</a></li>";
+            echo "<li><a href='profil.php'>Profil</a></li>"; 
+            } else {
+            echo "<li><a href='connexion.php'>Se connecter</a></li>";
+            echo "<li><a href='inscription.php'>Sinscrire</a></li>";
+        };
+            ?>
             </ul>
         </nav>
     </header>

@@ -50,8 +50,15 @@ if (isset($_POST['env']))
         <nav>
             <ul>
                 <li id="index"> <a href="index.php">Accueil </a> </li>
-                <li id="inscription"> <a href="inscription.php">Inscription </a> </li>
-                <li id="connexion"> <a href="connexion.php">Connexion </a> </li>
+                <?php 
+            if (isset($_SESSION["id"])) {
+            echo "<li><a href='deconnexion.php'>deconnexion</a></li>";
+            echo "<li><a href='profil.php'>Profil</a></li>"; 
+            } else {
+            echo "<li><a href='connexion.php'>Se connecter</a></li>";
+            echo "<li><a href='inscription.php'>Sinscrire</a></li>";
+        };
+            ?>
 
             </ul>
         </nav>
