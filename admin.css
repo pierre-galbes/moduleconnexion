@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    background-image: url(https://s1.1zoom.me/b6554/595/Yamaha_2018_YZF-R1_Motorcyclist_Helmet_Motion_537724_1920x1080.jpg);
+    background-size: cover;
+    margin: 0.1%
+}
+
+li{
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    width: 4%;
+    border-radius:5px;
+}
+
+
