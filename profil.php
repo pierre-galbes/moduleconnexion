@@ -17,6 +17,7 @@ if (isset($_POST['env']))
     $prenom1 = $_POST['prenom'];
     $password1 = $_POST['password'];
     $login1 = $_POST['login'];
+    if($login1 !='admin')
     $req2= mysqli_query($bdd,"UPDATE utilisateurs SET login='$login1', prenom='$prenom1', nom='$nom1', password='$password1' WHERE  id = $id ");
     header("Location: profil.php");
 } 

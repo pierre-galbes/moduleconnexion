@@ -9,8 +9,14 @@
 </head>
 
 <body>
-    <h1>My SQL</h1>
     <?php
+    session_start();
+    if(isset($_SESSION['admin'])){
+    ?>
+    
+    <h1>Base de données</h1>
+    <?php
+
             $bdd = mysqli_connect("localhost","root","","moduleconnexion"); 
             $req= mysqli_query($bdd,"SELECT * FROM utilisateurs");  
             $res= mysqli_fetch_all($req); 
@@ -54,6 +60,10 @@
 
         </body>
     </table>
+    <?php
+            }
+            else echo 'T AS PAS LE DROIT !!!!!!! ';
+    ?>
 </body>
 
 </html>

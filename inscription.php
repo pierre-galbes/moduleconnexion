@@ -11,15 +11,20 @@ $login = $_POST['login'];
 $conf = $_POST['conf']; 
 
 if (!empty($nom) && !empty($prenom) && !empty($password) && !empty($login)) {
+    $sql=mysqli_query ($connect,"SELECT * FROM utilisateurs WHERE login='$login'"); 
+    $res= mysqli_fetch_all($sql);
+    if (count($res) == 0)
     if ($password == $conf) { 
-    echo '...Bienvenue dans le club de motard';
+    echo 'BIENVENUE';
     $req= mysqli_query($connect,"INSERT INTO utilisateurs (login,prenom,nom,password)
     VALUES('$login','$prenom','$nom','$password')");
-    } else {echo 'Tas oublier de mettre le même mot de passe';}
-
-} else {echo 'T as oublier de remplir un champ';}
+    } else {echo 'mdp incorrect';}
+    else {echo 'Compte deja existant';}
+    } else {echo 'Tu dois tout remplir';}
 
 }
+
+
 
 ?>
 
